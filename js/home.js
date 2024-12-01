@@ -8,6 +8,21 @@ document.getElementById('btn-add-money')
     const addMoneyInput = document.getElementById('input-add-money').value;
     //step-3: get pin number
     const pinInput = document.getElementById('input-pin').value;
-    console.log(addMoneyInput, pinInput);
+    // step-4: verify pin number (wrong way)
+    if(pinInput === '1234') {
+       // console.log('adding money to your account');
+       const balance = document.getElementById('balance-account').innerText;
+       //step-5: convert string into number
+       const addMoneyNumber = parseFloat(addMoneyInput);
+       const balanceNumber = parseFloat(balance);
+    //    step-6: update current balance
+       const newBalance = balanceNumber + addMoneyNumber;
+    // step-7: update account in the UI
+    document.getElementById('balance-account').innerText = newBalance;
+    }
+
+    else {
+        alert('Failed to add money! Please try again');
+    }
 
 })
