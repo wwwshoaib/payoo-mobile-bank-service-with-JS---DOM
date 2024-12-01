@@ -9,6 +9,16 @@ document.getElementById('button-login')
 
 //step-3: get the phone number
    const phoneNumber = document.getElementById('phone-number').value;
-   console.log(phoneNumber);
+   const pinNumber = document.getElementById('pin-number').value;
+   console.log(phoneNumber, pinNumber);
+
+   if(phoneNumber === '1234' && pinNumber === '1234') {
+    console.log('You are logged in');
+    window.location.href = '/home.html';
+   } 
+
+   else {
+    alert('wrong phone number or pin');
+   }
 
 })
